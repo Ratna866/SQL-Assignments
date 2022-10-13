@@ -1,0 +1,15 @@
+Select EmployeeName,Dept,joiningdate from Employee where joiningdate between '2012-04-06' and '2012-04-06'
+
+Select EmployeeName,Dept,JoiningDate from Employee where JoiningDate between '2022-01-01' and '2022-12-31'
+
+select productname,unitprice from product where unitprice in (select max(unitprice)from product) or unitprice in (select min(unitprice)from product);
+
+Select ProductName ,IsDiscounted from Product Where IsDiscounted = 'True'
+
+Select ProductName ,IsDiscounted from Product Where IsDiscounted = 'false'
+
+Select Id,FirstName, SUBSTRING(FirstName,1,1) from Customer a Where FirstName like '%RA%' Order by Id;
+
+select b.firstname,a.orderdate,c.orderid,c.quantity from order1 a,customer b,orderitem c where a.customerid=b.id and c.orderid=a.id and c.quantity in (select MAX(quantity)from orderitem);
+
+select c.id,c.firstname,c.phone,b.orderdate,b.ordernumber from orderitem a,order1 b,customer c where b.id=orderid and c.id=b.customerid;

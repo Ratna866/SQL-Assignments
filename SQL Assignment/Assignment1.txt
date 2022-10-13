@@ -1,0 +1,8 @@
+/****** Script for SelectTopNRows command from SSMS  ******/
+select * from customer;
+
+select Country from customer where Country like 'a%'
+union 
+select Country from customer where Country like 'i%';
+
+select * from customer where firstname like'__i%';

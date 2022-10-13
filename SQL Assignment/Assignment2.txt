@@ -1,0 +1,39 @@
+select * from customer where country ='Germany';
+
+select FirstName,LastName from customer;
+
+alter table customer add faxnum varchar(8);
+
+select * from customer where FirstName like'_u%';
+
+Select * from customer;
+
+select * from customer where FaxNum IS NOT NULL;
+
+select * from Customer where FirstName like '_u%'; 
+
+select * from OrderItem;
+
+select * from OrderItem where UnitPrice>'10' and UnitPrice<'20';
+
+alter table Order1 where shippingdate IS NOT NULL order by orderDate;
+
+select * from Order1;
+
+select * from Order1 where shippingdate is not null order by orderdate;
+ 
+select avg(quantity) from orderItem;
+ 
+Select a.id,c.ProductName,((a.Quantity*a.UnitPrice)-b.DiscountAmt) as Price from OrderItem a, Product_bill b ,Product c 
+where a.ProductId = b.ProductId and a.ProductId = c.Id and c.Package ='Exotic Liquids' and a.UnitPrice > 50;
+
+Select a.Id,c.ProductName From OrderItem a, Product_bill b , Product c Where a.ProductId = b.ProductId and a.ProductId = c.Id and c.Package ='Exotic Liquids'
+ 
+Select a.ShipName, b.FirstName from Cust_ship a, Customer b where a.Custid = b.Id
+ 
+Select a.id,c.ProductName,((a.Quantity*a.UnitPrice)-b.DiscountAmt) as Price from OrderItem a, Product_bill b ,Product c 
+ where a.ProductId = b.ProductId and a.ProductId = c.Id and c.Package ='Exotic Liquids' and a.UnitPrice > 50
+ 
+Select c.id, c.OrderDate,d.ShipName From OrderItem a, Product_bill b , Order1 c, Cust_ship d 
+ where a.ProductId = b.ProductId and a.OrderId =c.Id and c.CustomerId = d.Custid and d.ShipName = 'La corne d abondance' and c.OrderDate between '2022-15-09' and '2022-06-12'
+
